@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = [
     "matplotlib (>=3.10.3,<4.0.0)",
-    "matplotlib-extension @ git+https://github.com/y-marui/matplotlib-extension.git"
+    "python-matplotlib-extension @ git+https://github.com/y-marui/matplotlib-extension.git"
 ]
 
 
