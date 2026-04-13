@@ -2,7 +2,7 @@ name: Dev Charter Check
 
 on:
   schedule:
-    - cron: "0 4 * * 1"  # Every Monday at 04:00 UTC
+    - cron: "48 6 * * 1"  # Every Mon 06:48 UTC
   workflow_dispatch:
 
 permissions:
