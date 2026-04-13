@@ -9,7 +9,7 @@ license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "matplotlib>=3.10.3,<4.0.0",
+    "matplotlib>=3.10.8,<4.0.0",
     "matplotlib-extension @ git+https://github.com/y-marui/python-matplotlib-extension.git",
 ]
 
