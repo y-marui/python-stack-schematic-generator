@@ -1,19 +1,43 @@
 [project]
 name = "stack-schematic-generator"
 version = "0.1.0"
-description = ""
+description = "Python library for generating schematic diagrams of multilayer stack structures"
 authors = [
-    {name = "Yukihiro",email = "12211343+y-marui@users.noreply.github.com"}
+    {name = "Yukihiro Marui", email = "12211343+y-marui@users.noreply.github.com"},
 ]
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = ">=3.12,<4.0"
+requires-python = ">=3.12"
 dependencies = [
-    "matplotlib (>=3.10.3,<4.0.0)",
-    "matplotlib-extension @ git+https://github.com/y-marui/python-matplotlib-extension.git"
+    "matplotlib>=3.10.3,<4.0.0",
+    "matplotlib-extension @ git+https://github.com/y-marui/python-matplotlib-extension.git",
 ]
 
+[dependency-groups]
+dev = [
+    "ruff>=0.9",
+    "mypy>=1.14",
+    "pytest>=8.0",
+]
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.ruff]
+line-length = 88
+exclude = ["stack_schematic_generator/test_stack.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+exclude = ["stack_schematic_generator/test_stack\\.py"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

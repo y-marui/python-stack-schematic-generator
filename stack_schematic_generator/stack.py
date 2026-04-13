@@ -1,9 +1,11 @@
-from .coordinate import Coordinate
 import matplotlib.pyplot as plt
 import numpy as np
+
+from .coordinate import Coordinate
 from .layer import Layer
 
-class Stack(object):
+
+class Stack:
     """
     Stack class for managing and plotting a collection of layers.
 
@@ -22,7 +24,7 @@ class Stack(object):
         layers : list
             List of Layer objects to be managed in the stack.
         """
-        self.layers:list[Layer] = layers
+        self.layers: list[Layer] = layers
 
     def get_height(self) -> float:
         """
@@ -33,13 +35,15 @@ class Stack(object):
         float
             The sum of the heights and positive slopes of all layers in the stack.
         """
-        return np.sum([layer.height+np.max([layer.slope, 0]) for layer in self.layers])
+        return np.sum(
+            [layer.height + np.max([layer.slope, 0]) for layer in self.layers]
+        )
 
     def plot(
-            self,
-            fig: plt.Figure = None,
-            ax: plt.Axes = None,
-            delta_figsize: tuple[float, float] = (1.6, 0.3)
+        self,
+        fig: plt.Figure | None = None,
+        ax: plt.Axes | None = None,
+        delta_figsize: tuple[float, float] = (1.6, 0.3),
     ) -> tuple[plt.Figure, plt.Axes]:
         """
         Plot the stack using matplotlib.
@@ -61,7 +65,9 @@ class Stack(object):
             The matplotlib axes object.
         """
         if (fig is None) or (ax is None):
-            fig, ax = plt.subplots(figsize=(delta_figsize[0], delta_figsize[1] * self.get_height()))
+            fig, ax = plt.subplots(
+                figsize=(delta_figsize[0], delta_figsize[1] * self.get_height())
+            )
 
         xy = Coordinate(0, 0, 1, 0)
 
@@ -70,7 +76,7 @@ class Stack(object):
 
         W = xy.get_x_max()
         H = xy.get_y_max()
-        ax.set_xlim(-0.01*W, 1.01*W)
-        ax.set_ylim(-0.01*H, 1.01*H)
+        ax.set_xlim(-0.01 * W, 1.01 * W)
+        ax.set_ylim(-0.01 * H, 1.01 * H)
 
         return fig, ax
