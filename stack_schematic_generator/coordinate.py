@@ -1,17 +1,22 @@
+from collections.abc import Sequence
+
 import matplotlib.patches as patches
 import numpy as np
 
-class Coordinate(object):
+
+class Coordinate:
     """
     Represents a coordinate system for drawing stack layers.
     Manages the positions and rotation of the current layer.
     """
 
-    def __init__(self,
-                 x_left: float = 0,
-                 y_left: float = 0,
-                 x_right: float = 1,
-                 y_right: float = 0) -> None:
+    def __init__(
+        self,
+        x_left: float = 0,
+        y_left: float = 0,
+        x_right: float = 1,
+        y_right: float = 0,
+    ) -> None:
         """
         Initialize a Coordinate object.
 
@@ -29,7 +34,7 @@ class Coordinate(object):
         self.y_center: float = (self.y_right + self.y_left) / 2
         self.rotation: float = 0
 
-    def get_polygon(self, layer, delta_figsize: list) -> patches.Polygon:
+    def get_polygon(self, layer, delta_figsize: Sequence[float]) -> patches.Polygon:
         """
         Generate a matplotlib Polygon object for the given layer.
 
@@ -40,20 +45,26 @@ class Coordinate(object):
         Returns:
             patches.Polygon: The polygon representing the layer.
         """
-        p = patches.Polygon(xy=[(self.x_left, self.y_left),
-                                (self.x_right, self.y_right),
-                                (self.x_right, self.y_right + layer.height + layer.slope),
-                                (self.x_left, self.y_left + layer.height)],
-                            fc=layer.color,
-                            fill=True,
-                            ec="black")
+        top_right_y = self.y_right + layer.height + layer.slope
+        p = patches.Polygon(
+            xy=[
+                (self.x_left, self.y_left),
+                (self.x_right, self.y_right),
+                (self.x_right, top_right_y),
+                (self.x_left, self.y_left + layer.height),
+            ],
+            fc=layer.color,
+            fill=True,
+            ec="black",
+        )
 
         self.x_center = (self.x_right + self.x_left) / 2
-        self.y_center = (self.y_right + self.y_left + layer.height + layer.slope / 2) / 2
+        y_mid = self.y_right + self.y_left + layer.height + layer.slope / 2
+        self.y_center = y_mid / 2
 
         delta_x = (self.x_right - self.x_left) * delta_figsize[0]
         delta_y = (self.y_right - self.y_left + layer.slope / 2) * delta_figsize[1]
-        self.rotation = np.atan(delta_y /delta_x) * 180 / np.pi
+        self.rotation = np.atan(delta_y / delta_x) * 180 / np.pi
 
         self.y_right += layer.height + layer.slope
         self.y_left += layer.height

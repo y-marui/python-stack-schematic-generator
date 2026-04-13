@@ -1,6 +1,9 @@
+from collections.abc import Sequence
+
 from .coordinate import Coordinate
 
-class Layer(object):
+
+class Layer:
     """
     Represents a single layer in the stack schematic.
 
@@ -18,7 +21,14 @@ class Layer(object):
         The slope of the layer.
     """
 
-    def __init__(self, label:str, color:str, width:float=1, height:float=1, slope:float=0):
+    def __init__(
+        self,
+        label: str,
+        color: str,
+        width: float = 1,
+        height: float = 1,
+        slope: float = 0,
+    ):
         """
         Initialize the Layer object.
 
@@ -41,7 +51,13 @@ class Layer(object):
         self.height = height
         self.slope = slope
 
-    def plot(self, ax, xy:Coordinate, delta_figsize:list, font_size="small"):
+    def plot(
+        self,
+        ax,
+        xy: Coordinate,
+        delta_figsize: Sequence[float],
+        font_size: str = "small",
+    ):
         """
         Plot the layer as a polygon and add its label to the given axes.
 
@@ -58,4 +74,12 @@ class Layer(object):
         """
         if self.label is not None:
             ax.add_patch(xy.get_polygon(self, delta_figsize))
-            ax.text(xy.x_center, xy.y_center, self.label, va="center", ha="center", size=font_size, rotation=xy.rotation)
+            ax.text(
+                xy.x_center,
+                xy.y_center,
+                self.label,
+                va="center",
+                ha="center",
+                size=font_size,
+                rotation=xy.rotation,
+            )
