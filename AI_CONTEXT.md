@@ -23,6 +23,7 @@ Python library for generating schematic diagrams of multilayer (stack) structure
 憲章参照: `docs/dev-charter/CHARTER_INDEX.md` でトピックを特定してから該当ファイルのみ読む
 
 - Code style: `docs/dev-charter/CODE_STYLE.md`
+- AI collaboration rules: `docs/dev-charter/AI_COLLABORATION_RULES.md`
 - Security: `docs/dev-charter/SECURITY_POLICY.md`
 - Python dev env: `docs/dev-charter/topics/PYTHON_DEV_ENV.md`
 - CI policy: `docs/dev-charter/topics/CI_POLICY.md`

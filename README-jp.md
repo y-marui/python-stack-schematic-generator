@@ -1,13 +1,13 @@
 # Stack Schematic Generator
 
-> **This is the reference (English) version.**
-> The canonical (Japanese) version is [README-jp.md](README-jp.md).
+> **このファイルは正本（日本語版）です。**
+> 英語版（参照）は [README.md](README.md) を参照してください。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/y-marui/python-stack-schematic-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/y-marui/python-stack-schematic-generator/actions/workflows/ci.yml)
 [![Charter Check](https://github.com/y-marui/python-stack-schematic-generator/actions/workflows/dev-charter-check.yml/badge.svg)](https://github.com/y-marui/python-stack-schematic-generator/actions/workflows/dev-charter-check.yml)
 
-Python library for generating schematic diagrams of multilayer (stack) structures using matplotlib.
+matplotlib を使って多層膜（スタック）構造の模式図を簡単に生成するための Python ライブラリ。
 
 ## Requirements
 
@@ -20,7 +20,7 @@ Python library for generating schematic diagrams of multilayer (stack) structure
 pip install git+https://github.com/y-marui/python-stack-schematic-generator.git
 ```
 
-For development:
+開発環境のセットアップ：
 
 ```bash
 git clone https://github.com/y-marui/python-stack-schematic-generator.git
@@ -52,7 +52,7 @@ with plt.style.context(['matplotlib_extension.article', 'stack_schematic_generat
     <img src="docs/W_CoFeB.png" width="200">
 </div>
 
-Wedge-shaped layers using the `slope` parameter:
+`slope` パラメータを使ったくさび形レイヤー：
 
 ```python
 with plt.style.context(['matplotlib_extension.article', 'stack_schematic_generator.stack_schematic']):
@@ -74,16 +74,16 @@ with plt.style.context(['matplotlib_extension.article', 'stack_schematic_generat
 
 ### Development Commands
 
-| Command | Description |
+| コマンド | 説明 |
 |---|---|
-| `uv run pytest` | Run tests |
-| `uv run ruff check .` | Lint |
-| `uv run ruff format .` | Format |
-| `uv run mypy stack_schematic_generator/` | Type check |
+| `uv run pytest` | テスト実行 |
+| `uv run ruff check .` | リント |
+| `uv run ruff format .` | フォーマット |
+| `uv run mypy stack_schematic_generator/` | 型チェック |
 
 ## License
 
 [MIT](LICENSE)
 
 ---
-*This document has a Japanese canonical version [README-jp.md](README-jp.md). Update both in the same commit when editing.*
+*この文書には英語版 [README.md](README.md) があります。編集時は同一コミットで更新してください。*
