@@ -18,6 +18,17 @@ Python library for generating schematic diagrams of multilayer (stack) structure
 | `tests/` | pytest tests |
 | `docs/dev-charter/` | Shared dev charter (git subtree from y-marui/dev-charter) |
 
+## Reference Order
+
+AI はタスク開始時に以下の順で参照する:
+
+1. README.md（概要・セットアップ）
+2. DEVELOPING.md（ビルド・実装規約・命名規則）
+
+必要に応じて以下を参照する（順不同）:
+- CONTRIBUTING.md（PR・Issue ルール）
+- docs/dev-charter/CHARTER_INDEX.md（憲章トピック検索）
+
 ## Applied Charter Principles
 
 憲章参照: `docs/dev-charter/CHARTER_INDEX.md` でトピックを特定してから該当ファイルのみ読む
@@ -39,6 +50,11 @@ Python library for generating schematic diagrams of multilayer (stack) structure
 
 - **Claude Code:** 機能追加・リファクタリング・CI 設定
 - **GitHub Copilot:** 補完・微修正
+
+## Document Sync Rule
+
+仕様・ルール・構成に変更が生じたとき、変更と同じ作業内で関連ドキュメントを更新する。
+対象は docs/ 内のファイルに限らず、AI_CONTEXT.md・README.md 等のルートファイルも含む。
 
 ## Prohibited Actions
 

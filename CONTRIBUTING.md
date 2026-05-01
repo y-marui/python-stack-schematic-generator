@@ -5,15 +5,7 @@ Small bug fixes and typos can be submitted directly as a PR.
 
 ## Development Setup
 
-See [README.md](README.md) for setup instructions.
-
-## Code Style
-
-Follow [CODE_STYLE.md](docs/dev-charter/CODE_STYLE.md).
-
-## Commit Messages
-
-Use [Conventional Commits](https://www.conventionalcommits.org/) format (e.g. `fix: ...`, `feat: ...`).
+See [DEVELOPING.md](DEVELOPING.md) for build, test, and code style instructions.
 
 ## Pull Request Checklist
 
