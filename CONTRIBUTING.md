@@ -9,9 +9,4 @@ See [DEVELOPING.md](DEVELOPING.md) for build, test, and code style instructions.
 
 ## Pull Request Checklist
 
-- [ ] No secrets or credentials included
-- [ ] Lint passes (`uv run ruff check .`)
-- [ ] Type checks pass (`uv run mypy stack_schematic_generator/`)
-- [ ] Tests pass (`uv run pytest`)
-- [ ] New features include tests
-- [ ] User-facing changes are documented
+See `.github/PULL_REQUEST_TEMPLATE.md` for the current checklist.

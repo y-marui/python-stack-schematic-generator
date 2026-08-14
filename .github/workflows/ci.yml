@@ -36,7 +36,7 @@ jobs:
       - run: uv run pytest
 
   build:
-    name: Build (installability check)
+    name: Build
     needs: [security, lint, test]
     runs-on: ubuntu-latest
     steps:
