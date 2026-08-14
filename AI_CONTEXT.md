@@ -48,8 +48,9 @@ AI はタスク開始時に以下の順で参照する:
 
 ## AI Tool Assignments
 
-- **Claude Code:** 機能追加・リファクタリング・CI 設定
-- **GitHub Copilot:** 補完・微修正
+- **使用ツール**：Claude Code、GitHub Copilot
+- **標準担当の正本**：`docs/dev-charter/AI_COLLABORATION_RULES.md` の「AI Tool Responsibilities」と「Rules for Multi-AI Usage」
+- **プロジェクト固有の上書き**：なし
 
 ## Document Sync Rule
 
