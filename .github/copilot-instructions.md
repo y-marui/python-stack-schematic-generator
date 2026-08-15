@@ -1,1 +1,1 @@
-`../AI_CONTEXT.md` を参照。
+`AI_CONTEXT.md` を参照。
