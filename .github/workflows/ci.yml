@@ -64,13 +64,18 @@ jobs:
       - run: uv run mypy stack_schematic_generator/
 
   test:
-    name: Test (pytest)
+    name: Test (Python ${{ matrix.python-version }})
     needs: changes
     if: needs.changes.outputs.code == 'true'
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]  # EOLまで6ヶ月以上あるバージョン
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: ${{ matrix.python-version }}
       - run: uv sync --frozen
       - run: uv run pytest
 
