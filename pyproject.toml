@@ -7,7 +7,7 @@ authors = [
 ]
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = [
     "matplotlib>=3.10.8,<4.0.0",
     "matplotlib-extension @ git+https://github.com/y-marui/python-matplotlib-extension.git",
@@ -35,7 +35,7 @@ exclude = ["stack_schematic_generator/test_stack.py"]
 select = ["E", "F", "I", "UP"]
 
 [tool.mypy]
-python_version = "3.12"
+python_version = "3.11"
 ignore_missing_imports = true
 exclude = ["stack_schematic_generator/test_stack\\.py"]
 

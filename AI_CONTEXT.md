@@ -4,7 +4,7 @@
 
 Python library for generating schematic diagrams of multilayer (stack) structures using matplotlib.
 
-- **Language:** Python 3.12+
+- **Language:** Python 3.11+
 - **Build:** hatchling / uv
 - **Linting:** ruff
 - **Type checking:** mypy
