@@ -29,11 +29,12 @@ allow-direct-references = true
 
 [tool.ruff]
 line-length = 88
-exclude = ["stack_schematic_generator/test_stack.py"]
+target-version = "py311"
 # docs/dev-charter/ is a git subtree we cannot edit directly (see
 # AI_CONTEXT.md); recent ruff formats fenced Python blocks in Markdown
-# by default, which would otherwise flag it.
-extend-exclude = ["docs/dev-charter"]
+# by default, which would otherwise flag it. extend-exclude (not exclude)
+# so ruff's own default ignore list is kept too.
+extend-exclude = ["docs/dev-charter", "stack_schematic_generator/test_stack.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]
