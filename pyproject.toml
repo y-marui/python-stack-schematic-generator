@@ -42,6 +42,7 @@ select = ["E", "F", "I", "UP"]
 python_version = "3.11"
 ignore_missing_imports = true
 exclude = ["stack_schematic_generator/test_stack\\.py"]
+strict = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

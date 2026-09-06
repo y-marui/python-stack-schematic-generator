@@ -1,7 +1,11 @@
 from collections.abc import Sequence
+from typing import TYPE_CHECKING
 
 import matplotlib.patches as patches
 import numpy as np
+
+if TYPE_CHECKING:
+    from .layer import Layer
 
 
 class Coordinate:
@@ -34,7 +38,9 @@ class Coordinate:
         self.y_center: float = (self.y_right + self.y_left) / 2
         self.rotation: float = 0
 
-    def get_polygon(self, layer, delta_figsize: Sequence[float]) -> patches.Polygon:
+    def get_polygon(
+        self, layer: "Layer", delta_figsize: Sequence[float]
+    ) -> patches.Polygon:
         """
         Generate a matplotlib Polygon object for the given layer.
 
@@ -71,7 +77,7 @@ class Coordinate:
 
         return p
 
-    def get_x_max(self):
+    def get_x_max(self) -> float:
         """
         Get the maximum x-coordinate.
 
@@ -80,11 +86,11 @@ class Coordinate:
         """
         return self.x_right
 
-    def get_y_max(self):
+    def get_y_max(self) -> float:
         """
         Get the maximum y-coordinate.
 
         Returns:
             float: The maximum y-coordinate.
         """
-        return np.max([self.y_left, self.y_right])
+        return float(np.max([self.y_left, self.y_right]))
