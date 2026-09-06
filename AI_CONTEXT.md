@@ -36,7 +36,7 @@ AI はタスク開始時に以下の順で参照する:
 - Code style: `docs/dev-charter/CODE_STYLE.md`
 - AI collaboration rules: `docs/dev-charter/AI_COLLABORATION_RULES.md`
 - Security: `docs/dev-charter/SECURITY_POLICY.md`
-- Python dev env: `docs/dev-charter/topics/PYTHON_DEV_ENV.md`
+- Python dev env: `docs/dev-charter/topics/python/PYTHON_DEV_ENV.md`
 - CI policy: `docs/dev-charter/topics/CI_POLICY.md`
 - GitHub settings: `docs/dev-charter/topics/GITHUB_SETTINGS.md`
 
