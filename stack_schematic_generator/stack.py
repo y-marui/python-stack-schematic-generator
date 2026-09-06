@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.axes import Axes
+from matplotlib.figure import Figure
 
 from .coordinate import Coordinate
 from .layer import Layer
@@ -35,16 +37,16 @@ class Stack:
         float
             The sum of the heights and positive slopes of all layers in the stack.
         """
-        return np.sum(
-            [layer.height + np.max([layer.slope, 0]) for layer in self.layers]
+        return float(
+            np.sum([layer.height + np.max([layer.slope, 0]) for layer in self.layers])
         )
 
     def plot(
         self,
-        fig: plt.Figure | None = None,
-        ax: plt.Axes | None = None,
+        fig: Figure | None = None,
+        ax: Axes | None = None,
         delta_figsize: tuple[float, float] = (1.6, 0.3),
-    ) -> tuple[plt.Figure, plt.Axes]:
+    ) -> tuple[Figure, Axes]:
         """
         Plot the stack using matplotlib.
 

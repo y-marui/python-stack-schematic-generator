@@ -1,5 +1,7 @@
 from collections.abc import Sequence
 
+from matplotlib.axes import Axes
+
 from .coordinate import Coordinate
 
 
@@ -53,11 +55,11 @@ class Layer:
 
     def plot(
         self,
-        ax,
+        ax: Axes,
         xy: Coordinate,
         delta_figsize: Sequence[float],
         font_size: str = "small",
-    ):
+    ) -> None:
         """
         Plot the layer as a polygon and add its label to the given axes.
 
