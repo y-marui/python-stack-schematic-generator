@@ -61,3 +61,4 @@ AI はタスク開始時に以下の順で参照する:
 
 - シークレット・認証情報のコミット
 - `plt.show()` を含むテストの追加（ヘッドレス環境で失敗する）
+- `docs/dev-charter/` 配下のファイルの直接編集（変更は dev-charter 本体に Issue を立て、`git subtree pull` で取り込む）
